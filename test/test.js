@@ -349,4 +349,25 @@ describe('Panini helpers', () => {
         done();
       });
   });
+
+
+  it('displays debug information if debug=true', done => {
+    var p = new Panini({
+      root: FIXTURES + 'basic/pages/',
+      layouts: FIXTURES + 'basic/layouts',
+      debug: true
+    });
+
+    p.refresh();
+
+    src(FIXTURES + 'basic/pages/*')
+      .pipe(p.render())
+      .pipe(dest(FIXTURES + 'basic/build'))
+      .on('finish', () => {
+        equal(FIXTURES + 'basic/expected', FIXTURES + 'basic/build');
+        done();
+      });
+  });
+  
+  
 });
