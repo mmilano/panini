@@ -15,6 +15,7 @@ var options = {
   "data": String,
   "helpers": String,
   "output": String,
+  "debug": Boolean,
   "version": String
 }
 
