@@ -42,7 +42,7 @@ var debug;
 Panini.prototype.refresh = require('./lib/refresh');
 Panini.prototype.loadLayouts = require('./lib/loadLayouts');
 
-// Panini.prototype.loadPageLayouts = require('./lib/loadPageLayouts');
+Panini.prototype.findPageLayouts = require('./lib/findPageLayouts');
 
 Panini.prototype.loadPartials = require('./lib/loadPartials');
 Panini.prototype.loadHelpers = require('./lib/loadHelpers');
