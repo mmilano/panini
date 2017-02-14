@@ -19,15 +19,38 @@ function Panini(options) {
   if (!options.root) {
     throw new Error('Panini error: you must specify the root folder that pages live in.')
   }
+  
+  var debug;
+  if (!options.debug) {
+    debug = defaults.debug;
+  }
+  else {
+    this.options.debug ? debug = true : debug = false;
+  }
+  this.debug = debug;
+
 }
+
+
+const defaults = {
+    debug: false
+    };
+  
+var debug;
+
 
 Panini.prototype.refresh = require('./lib/refresh');
 Panini.prototype.loadLayouts = require('./lib/loadLayouts');
+
+// Panini.prototype.loadPageLayouts = require('./lib/loadPageLayouts');
+
 Panini.prototype.loadPartials = require('./lib/loadPartials');
 Panini.prototype.loadHelpers = require('./lib/loadHelpers');
 Panini.prototype.loadBuiltinHelpers = require('./lib/loadBuiltinHelpers');
 Panini.prototype.loadData = require('./lib/loadData');
 Panini.prototype.render = require('./lib/render');
+
+Panini.prototype.debug = require('./lib/debug');
 
 /**
  * Gulp stream function that renders HTML pages. The first time the function is invoked in the stream, a new instance of Panini is created with the given options.
