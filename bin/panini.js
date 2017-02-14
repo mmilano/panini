@@ -26,6 +26,7 @@ var shorthands = {
   "d": "--data",
   "h": "--helpers",
   "o": "--output",
+  "d": "--debug",
   "v": "--version"
 }
 
