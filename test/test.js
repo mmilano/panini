@@ -78,6 +78,25 @@ describe('Panini', () => {
       });
   });
 
+  it('builds a page with custom decorators', done => {
+    var p = new Panini({
+      root: FIXTURES + 'decorators/pages/',
+      layouts: FIXTURES + 'decorators/layouts/',
+      partials: FIXTURES + 'decorators/partials/',
+      decorators: FIXTURES + "decorators/decorators/',
+    });
+
+    p.refresh();
+
+    src(FIXTURES + 'decorators/pages/*')
+      .pipe(p.render())
+      .pipe(dest(FIXTURES + 'decorators/build'))
+      .on('finish', () => {
+        equal(FIXTURES + 'decorators/expected', FIXTURES + 'decorators/build');
+        done();
+      });
+  });
+  
   it('builds a page with custom data', done => {
     var p = new Panini({
       root: FIXTURES + 'data-page/pages/',
@@ -185,6 +204,26 @@ describe('Panini', () => {
         done();
       });
   });
+
+  it('displays debug information if debug=true', done => {
+    var p = new Panini({
+      root: FIXTURES + 'basic/pages/',
+      layouts: FIXTURES + 'basic/layouts',
+      debug: true
+    });
+
+    p.refresh();
+
+    src(FIXTURES + 'basic/pages/*')
+      .pipe(p.render())
+      .pipe(dest(FIXTURES + 'basic/build'))
+      .on('finish', () => {
+        equal(FIXTURES + 'basic/expected', FIXTURES + 'basic/build');
+        done();
+      });
+  });
+  
+  
 });
 
 describe('Panini variables', () => {
@@ -350,24 +389,5 @@ describe('Panini helpers', () => {
       });
   });
 
-
-  it('displays debug information if debug=true', done => {
-    var p = new Panini({
-      root: FIXTURES + 'basic/pages/',
-      layouts: FIXTURES + 'basic/layouts',
-      debug: true
-    });
-
-    p.refresh();
-
-    src(FIXTURES + 'basic/pages/*')
-      .pipe(p.render())
-      .pipe(dest(FIXTURES + 'basic/build'))
-      .on('finish', () => {
-        equal(FIXTURES + 'basic/expected', FIXTURES + 'basic/build');
-        done();
-      });
-  });
-  
   
 });
