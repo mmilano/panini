@@ -7,9 +7,17 @@ var help = require('./lib/helpMessage');
  * @param {object} options - Configuration options to use.
  */
 function Panini(options) {
+    
+    // configuration defaults
+    const defaults = {
+        debug: 0
+    };
+
+  
   this.options = options;
   this.Handlebars = require('handlebars');
   this.layouts = {};
+  this.pageLayouts = {};
   this.data = {};
 
   if (!options.layouts) {
@@ -32,25 +40,16 @@ function Panini(options) {
 }
 
 
-const defaults = {
-    debug: false
-    };
-  
-var debug;
-
-
 Panini.prototype.refresh = require('./lib/refresh');
 Panini.prototype.loadLayouts = require('./lib/loadLayouts');
-
 Panini.prototype.findPageLayouts = require('./lib/findPageLayouts');
-
 Panini.prototype.loadPartials = require('./lib/loadPartials');
 Panini.prototype.loadHelpers = require('./lib/loadHelpers');
 Panini.prototype.loadBuiltinHelpers = require('./lib/loadBuiltinHelpers');
 Panini.prototype.loadData = require('./lib/loadData');
 Panini.prototype.render = require('./lib/render');
 
-Panini.prototype.debug = require('./lib/debug');
+Panini.prototype.debugging = require('./lib/debugging');
 
 /**
  * Gulp stream function that renders HTML pages. The first time the function is invoked in the stream, a new instance of Panini is created with the given options.
