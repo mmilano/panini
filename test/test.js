@@ -83,7 +83,7 @@ describe('Panini', () => {
       root: FIXTURES + 'decorators/pages/',
       layouts: FIXTURES + 'decorators/layouts/',
       partials: FIXTURES + 'decorators/partials/',
-      decorators: FIXTURES + "decorators/decorators/',
+      decorators: FIXTURES + 'decorators/decorators/',
     });
 
     p.refresh();
