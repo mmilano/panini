@@ -39,6 +39,7 @@ function Panini(options) {
 
 }
 
+Panini.prototype.debugging = require('./lib/debugging');
 
 Panini.prototype.refresh = require('./lib/refresh');
 Panini.prototype.loadLayouts = require('./lib/loadLayouts');
@@ -50,7 +51,7 @@ Panini.prototype.loadBuiltinHelpers = require('./lib/loadBuiltinHelpers');
 Panini.prototype.loadData = require('./lib/loadData');
 Panini.prototype.render = require('./lib/render');
 
-Panini.prototype.debugging = require('./lib/debugging');
+
 
 /**
  * Gulp stream function that renders HTML pages. The first time the function is invoked in the stream, a new instance of Panini is created with the given options.
@@ -63,6 +64,7 @@ module.exports = function(options) {
     panini.loadBuiltinHelpers();
     panini.refresh();
     module.exports.refresh = panini.refresh.bind(panini);
+
   }
 
   // Compile pages with the above helpers
@@ -70,7 +72,7 @@ module.exports = function(options) {
 }
 
 module.exports.Panini = Panini;
-module.exports.refresh = function() {}
+module.exports.refresh = function() {};
 module.exports.help = function() {
   help();
-}
+};
