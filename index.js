@@ -64,7 +64,6 @@ module.exports = function(options) {
     panini.loadBuiltinHelpers();
     panini.refresh();
     module.exports.refresh = panini.refresh.bind(panini);
-
   }
 
   // Compile pages with the above helpers
