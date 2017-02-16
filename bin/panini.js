@@ -7,18 +7,20 @@ var vfs        = require('vinyl-fs');
 var path       = require('path');
 
 
-// Options that can be passed to commands
+// Options that can be passed
 var options = {
   "root": String,
   "layouts": String,
   "partials": String,
+  "decorators": String,
   "data": String,
   "helpers": String,
   "output": String,
-  "version": String
+  "debug": Boolean,
+  "version": Boolean
 }
 
-// Shorthands for the above commands
+// Shorthands for the above command options
 var shorthands = {
   "r": "--root",
   "l": "--layouts",
@@ -26,7 +28,8 @@ var shorthands = {
   "d": "--data",
   "h": "--helpers",
   "o": "--output",
-  "v": "--version"
+  "d": "--debug",
+  "V": "--version"
 }
 
 var parsed = nopt(options, shorthands);
@@ -40,7 +43,7 @@ var cmd = {
 
 // No other arguments given
 if (typeof cmd.args[0] === 'undefined') {
-  // If -v or --version was passed, show the version of the CLI
+  // If -V or --version was passed, show the version of the CLI
   if (typeof cmd.opts.version !== 'undefined') {
     process.stdout.write("Panini version " + require('../package.json').version + '\n');
   }

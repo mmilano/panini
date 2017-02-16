@@ -7,9 +7,17 @@ var help = require('./lib/helpMessage');
  * @param {object} options - Configuration options to use.
  */
 function Panini(options) {
+    
+    // configuration defaults
+    const defaults = {
+        debug: 0
+    };
+
+  
   this.options = options;
   this.Handlebars = require('handlebars');
   this.layouts = {};
+  this.pageLayouts = {};
   this.data = {};
 
   if (!options.layouts) {
@@ -19,15 +27,31 @@ function Panini(options) {
   if (!options.root) {
     throw new Error('Panini error: you must specify the root folder that pages live in.')
   }
+  
+  var debug;
+  if (!options.debug) {
+    debug = defaults.debug;
+  }
+  else {
+    this.options.debug ? debug = true : debug = false;
+  }
+  this.debug = debug;
+
 }
+
+Panini.prototype.debugging = require('./lib/debugging');
 
 Panini.prototype.refresh = require('./lib/refresh');
 Panini.prototype.loadLayouts = require('./lib/loadLayouts');
+Panini.prototype.findPageLayouts = require('./lib/findPageLayouts');
 Panini.prototype.loadPartials = require('./lib/loadPartials');
+Panini.prototype.loadDecorators = require('./lib/loadDecorators');
 Panini.prototype.loadHelpers = require('./lib/loadHelpers');
 Panini.prototype.loadBuiltinHelpers = require('./lib/loadBuiltinHelpers');
 Panini.prototype.loadData = require('./lib/loadData');
 Panini.prototype.render = require('./lib/render');
+
+
 
 /**
  * Gulp stream function that renders HTML pages. The first time the function is invoked in the stream, a new instance of Panini is created with the given options.
@@ -47,7 +71,7 @@ module.exports = function(options) {
 }
 
 module.exports.Panini = Panini;
-module.exports.refresh = function() {}
+module.exports.refresh = function() {};
 module.exports.help = function() {
   help();
-}
+};
