@@ -75,13 +75,17 @@ All layouts have a special Handlebars partial called `body` which contains the c
 
 A list of presets for page layouts, grouped by folder. This allows you to automatically set all pages within a certain folder to have the same layout.
 
+The pagelayout item accepts the glob "\*\*/*" to specify subfolders.
+
 ```js
 panini({
   root: 'src/pages/',
   layouts: 'src/layouts/',
   pageLayouts: {
     // All pages inside src/pages/blog will use the blog.html layout
-    'blog': 'blog'
+    'blog': 'blog',
+    // All pages in src/pages/article AND BELOW will use the article.html layout
+    'article**/*': 'article'
   }
 })
 ```
@@ -113,6 +117,16 @@ module.exports = function(text) {
 }
 ```
 
+### `decorators`
+
+**Type:** `String`
+
+Path to a folder containing Handlebars decorators. Handlebars decorators are `.js` files which export a function via `module.exports`. The name used to register the decorator is the same as the name of the file.
+
+For example, a file named `formatter.js` that exports this function would add a Handlebars decorator called `{{* formatter}}`.
+
+
+
 ### `data`
 
 **Type:** `String`
@@ -137,6 +151,25 @@ Data can also be inserted into the page itself with a Front Matter template at t
 
 Lastly, the reserved `page` variable is added to every page template as it renders. It contains the name of the page being rendered, without the extension.
 
+### `debug`
+
+**Type:** `Boolean`
+
+Flag to have Panini display debugging information when rendering. 
+
+Will display the known components
+
+* layouts
+* pagelayouts
+* partials
+* decorators
+* helpers
+* data
+
+Then, for each page rendered, the base path, page name, and layout template used to render will be displayed.
+
+
+
 ## CLI
 
 You can also use panini via the CLI.
@@ -149,12 +182,14 @@ Options:
   --root     (required) path to the root folder all pages live in
   --dest     (required) path to the folder compiled pages should get sent to
   --partials            path to root folder for partials
-  --helpers             path to folder for additional helpers
+  --helpers             path to folder for custom helpers (panini includes a few of its own helpers)
+  --decorators          path to folder for decorators
   --data                path to folder for additional data
+  --debug
 
 the argument pagesglob should be a glob describing what pages you want to apply panini to.
 
-Example: panini --root=src/pages --layouts=src/layouts --partials=src/partials --data=src/data --output=dist 'src/pages/**/*.html'
+Example: panini --root=src/pages --layouts=src/layouts --partials=src/partials --data=src/data --debug=true --output=dist 'src/pages/**/*.html'
 ```
 
 ## Local Development
