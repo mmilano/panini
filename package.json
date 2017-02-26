@@ -6,6 +6,7 @@
   "scripts": {
     "test": "mocha --compilers js:babel-register --reporter nyan"
   },
+  "author": "ZURB <foundation@zurb.com> (http://zurb.com)",
   "author": "mmilano",
   "license": "MIT",
   "bin": {
