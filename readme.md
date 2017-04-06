@@ -27,7 +27,8 @@ gulp.task('default', function() {
       layouts: 'layouts/',
       partials: 'partials/',
       helpers: 'helpers/',
-      data: 'data/'
+      data: 'data/',
+      debug: 1
     }))
     .pipe(gulp.dest('build'));
 });
