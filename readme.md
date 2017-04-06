@@ -8,9 +8,16 @@ Panini isn't a full-fledged static site generator&mdash;rather, it solves the ve
 
 ## Installation
 
-```bash
-npm install panini --save-dev
-```
+
+**Note: This version of panini is not currently available via NPM, so installation must be done manually.**
+
+1. git clone/download locally
+1. within the local directory, npm link this version
+1. within your project, npm link **TO** the local version.
+
+
+See the [original panini](https://github.com/zurb/panini) for info about NPM installation.
+
 
 ## Usage
 
