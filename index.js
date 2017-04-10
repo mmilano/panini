@@ -7,13 +7,13 @@ var help = require('./lib/helpMessage');
  * @param {object} options - Configuration options to use.
  */
 function Panini(options) {
-    
+
     // configuration defaults
     const defaults = {
         debug: 0
     };
 
-  
+
   this.options = options;
   this.Handlebars = require('handlebars');
   this.layouts = {};
@@ -27,7 +27,7 @@ function Panini(options) {
   if (!options.root) {
     throw new Error('Panini error: you must specify the root folder that pages live in.')
   }
-  
+
   var debug;
   if (!options.debug) {
     debug = defaults.debug;
@@ -64,6 +64,9 @@ module.exports = function(options) {
     panini.loadBuiltinHelpers();
     panini.refresh();
     module.exports.refresh = panini.refresh.bind(panini);
+
+    // expose Handlebars to the outside
+    module.exports.Handlebars = panini.Handlebars;
   }
 
   // Compile pages with the above helpers
