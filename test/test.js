@@ -96,7 +96,7 @@ describe('Panini', () => {
         done();
       });
   });
-  
+
   it('builds a page with custom data', done => {
     var p = new Panini({
       root: FIXTURES + 'data-page/pages/',
@@ -222,8 +222,8 @@ describe('Panini', () => {
         done();
       });
   });
-  
-  
+
+
 });
 
 describe('Panini variables', () => {
@@ -265,7 +265,8 @@ describe('Panini variables', () => {
     var p = new Panini({
       root: FIXTURES + 'variable-root/pages/',
       layouts: FIXTURES + 'variable-root/layouts/',
-      partials: FIXTURES + 'variable-root/partials/'
+      partials: FIXTURES + 'variable-root/partials/',
+      helpers: FIXTURES + 'variable-root/helpers/'
     });
 
     p.refresh();
@@ -389,5 +390,5 @@ describe('Panini helpers', () => {
       });
   });
 
-  
+
 });

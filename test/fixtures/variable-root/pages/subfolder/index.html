@@ -1,2 +1,22 @@
 <img src="{{root}}image.jpg">
 {{> partial}}
+
+<p>
+partial within partial:
+</p>
+{{> partial-p1}}
+
+<p>
+partial within partial within partial:
+</p>
+{{> partial-t3}}
+
+<p>
+partial within partial within partial within partial within partial:
+</p>
+{{> partial-t5}}
+
+<p>
+partial with helper-data:
+</p>
+{{> partial-p3 (helper-data)}}
