@@ -183,12 +183,12 @@ Then, for each page rendered, the base path, page name, and layout template used
 You can also use panini via the CLI.
 
 ```
-Usage: panini --layouts=[layoutdir] --root=[rootdir] --dest=[destdir] [other options] 'pagesglob'
+Usage: panini --layouts=[layoutdir] --root=[rootdir] --output=[destdir] [other options] 'pagesglob'
 
 Options:
   --layouts  (required) path to a folder containing layouts
   --root     (required) path to the root folder all pages live in
-  --dest     (required) path to the folder compiled pages should get sent to
+  --output   (required) path to the folder compiled pages should get sent to
   --partials            path to root folder for partials
   --helpers             path to folder for custom helpers (panini includes a few of its own helpers)
   --decorators          path to folder for decorators

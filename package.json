@@ -1,6 +1,6 @@
 {
   "name": "panini",
-  "version": "1.4.1",
+  "version": "1.5.1",
   "description": "A super tiny flat file compiler.",
   "main": "index.js",
   "scripts": {
@@ -22,6 +22,7 @@
     "nopt": "^4.0.1",
     "parse-glob": "^3.0.4",
     "slash": "^1.0.0",
+    "strip-bom": "2.0.0",
     "through2": "^2.0.0",
     "vinyl-fs": "^2.4.4"
   },
