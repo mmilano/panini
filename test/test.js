@@ -96,7 +96,7 @@ describe('Panini', () => {
         done();
       });
   });
-  
+
   it('builds a page with custom data', done => {
     var p = new Panini({
       root: FIXTURES + 'data-page/pages/',
@@ -222,8 +222,8 @@ describe('Panini', () => {
         done();
       });
   });
-  
-  
+
+
 });
 
 describe('Panini variables', () => {
@@ -389,5 +389,4 @@ describe('Panini helpers', () => {
       });
   });
 
-  
 });
