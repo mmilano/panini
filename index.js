@@ -40,7 +40,7 @@ function Panini(options) {
 
 Panini.prototype.refresh = require('./lib/refresh');
 Panini.prototype.loadLayouts = require('./lib/loadLayouts');
-Panini.prototype.findPageLayouts = require('./lib/findPageLayouts');
+Panini.prototype.loadPageLayouts = require('./lib/loadPageLayouts');
 Panini.prototype.loadPartials = require('./lib/loadPartials');
 Panini.prototype.loadDecorators = require('./lib/loadDecorators');
 Panini.prototype.loadHelpers = require('./lib/loadHelpers');
