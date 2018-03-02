@@ -13,7 +13,6 @@ function Panini(options) {
         debug: 0
     };
 
-
   this.options = options;
   this.Handlebars = require('handlebars');
   this.layouts = {};
@@ -39,11 +38,10 @@ function Panini(options) {
 
 }
 
-Panini.prototype.debugging = require('./lib/debugging');
 
 Panini.prototype.refresh = require('./lib/refresh');
 Panini.prototype.loadLayouts = require('./lib/loadLayouts');
-Panini.prototype.findPageLayouts = require('./lib/findPageLayouts');
+Panini.prototype.loadPageLayouts = require('./lib/loadPageLayouts');
 Panini.prototype.loadPartials = require('./lib/loadPartials');
 Panini.prototype.loadDecorators = require('./lib/loadDecorators');
 Panini.prototype.loadHelpers = require('./lib/loadHelpers');
@@ -51,7 +49,7 @@ Panini.prototype.loadBuiltinHelpers = require('./lib/loadBuiltinHelpers');
 Panini.prototype.loadData = require('./lib/loadData');
 Panini.prototype.render = require('./lib/render');
 
-
+Panini.prototype.debugging = require('./lib/debugging');
 
 /**
  * Gulp stream function that renders HTML pages. The first time the function is invoked in the stream, a new instance of Panini is created with the given options.

@@ -188,7 +188,7 @@ Usage: panini --layouts=[layoutdir] --root=[rootdir] --output=[destdir] [other o
 Options:
   --layouts  (required) path to a folder containing layouts
   --root     (required) path to the root folder all pages live in
-  --output     (required) path to the folder compiled pages should get sent to
+  --output   (required) path to the folder compiled pages should get sent to
   --partials            path to root folder for partials
   --helpers             path to folder for custom helpers (panini includes a few of its own helpers)
   --decorators          path to folder for decorators
@@ -209,3 +209,4 @@ npm install
 ```
 
 Use `npm test` to run tests.
+
