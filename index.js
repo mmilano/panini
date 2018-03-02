@@ -38,6 +38,7 @@ function Panini(options) {
 
 }
 
+
 Panini.prototype.refresh = require('./lib/refresh');
 Panini.prototype.loadLayouts = require('./lib/loadLayouts');
 Panini.prototype.loadPageLayouts = require('./lib/loadPageLayouts');
@@ -47,6 +48,7 @@ Panini.prototype.loadHelpers = require('./lib/loadHelpers');
 Panini.prototype.loadBuiltinHelpers = require('./lib/loadBuiltinHelpers');
 Panini.prototype.loadData = require('./lib/loadData');
 Panini.prototype.render = require('./lib/render');
+
 Panini.prototype.debugging = require('./lib/debugging');
 
 /**
