@@ -22,7 +22,7 @@
     "nopt": "^4.0.1",
     "parse-glob": "^3.0.4",
     "slash": "^1.0.0",
-    "strip-bom": "2.0.0",
+    "strip-bom": "^3.0.0",
     "through2": "^2.0.0",
     "vinyl-fs": "^2.4.4"
   },
