@@ -1,3 +1,5 @@
+/* jshint esversion: 6 */  // allow es6 features
+
 import { src, dest } from 'vinyl-fs';
 import assert from 'assert';
 import equal from 'assert-dir-equal';

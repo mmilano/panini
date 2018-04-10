@@ -18,7 +18,7 @@ var options = {
   "output": String,
   "debug": Boolean,
   "version": Boolean
-}
+};
 
 // Shorthands for the above command options
 var shorthands = {
@@ -28,9 +28,9 @@ var shorthands = {
   "d": "--data",
   "h": "--helpers",
   "o": "--output",
-  "d": "--debug",
+  "D": "--debug",
   "V": "--version"
-}
+};
 
 var parsed = nopt(options, shorthands);
 
@@ -39,7 +39,7 @@ var parsed = nopt(options, shorthands);
 var cmd = {
   args: parsed.argv.remain,
   opts: parsed
-}
+};
 
 // No other arguments given
 if (typeof cmd.args[0] === 'undefined') {
