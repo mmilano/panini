@@ -9,8 +9,8 @@ var Handlebars = require('handlebars');
  * @returns The content inside of the helper, repeated n times.
  */
 module.exports = function(count, options) {
-  var str = '';
-  var data;
+  let str = '';
+  let data;
 
   if (options.data) {
     data = Handlebars.createFrame(options.data);
