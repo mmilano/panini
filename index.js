@@ -27,7 +27,7 @@ function Panini(options) {
     throw new Error('Panini error: you must specify the root folder that pages live in.')
   }
 
-  var debug;
+  let debug;
   if (!options.debug) {
     debug = defaults.debug;
   }

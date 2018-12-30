@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-var nopt       = require('nopt');
+const nopt     = require('nopt');
 var pkg        = require('../package.json');
 var panini     = require('../index');
-var vfs        = require('vinyl-fs');
-var path       = require('path');
+const vfs      = require('vinyl-fs');
+const path     = require('path');
 
 
 // Options that can be passed
@@ -32,7 +32,7 @@ var shorthands = {
   "V": "--version"
 };
 
-var parsed = nopt(options, shorthands);
+let parsed = nopt(options, shorthands);
 
 // cmd.args contains basic commands like "new" and "help"
 // cmd.opts contains options, like --libsass and --version
