@@ -1,12 +1,25 @@
 {
   "name": "panini",
   "version": "1.6.4",
-  "description": "A super tiny flat file compiler.",
+  "description": "Modified version of panini 1, a super tiny flat file compiler.",
   "main": "index.js",
   "scripts": {
     "test": "mocha --compilers js:babel-register --reporter nyan"
   },
-  "author": "mmilano",
+  "author": [
+    {
+        "name": "ZURB",
+        "email": "foundation@zurb.com",
+        "url": "http://zurb.com"
+    }
+  ],
+  "contributors": [
+    {
+        "name": "Michel Milano",
+        "email": "mmilano+git@gmail.com",
+        "url": "https://www.stochasticnotions.com"
+    }
+  ],
   "license": "MIT",
   "bin": {
     "panini": "./bin/panini.js"
