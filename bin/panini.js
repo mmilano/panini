@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 const nopt     = require('nopt');
-var pkg        = require('../package.json');
+// var pkg        = require('../package.json');
 var panini     = require('../index');
 const vfs      = require('vinyl-fs');
 const path     = require('path');
