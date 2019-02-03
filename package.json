@@ -8,16 +8,16 @@
   },
   "author": [
     {
-        "name": "ZURB",
-        "email": "foundation@zurb.com",
-        "url": "http://zurb.com"
+      "name": "ZURB",
+      "email": "foundation@zurb.com",
+      "url": "http://zurb.com"
     }
   ],
   "contributors": [
     {
-        "name": "Michel Milano",
-        "email": "mmilano+git@gmail.com",
-        "url": "https://www.stochasticnotions.com"
+      "name": "Michel Milano",
+      "email": "mmilano+git@gmail.com",
+      "url": "https://www.stochasticnotions.com"
     }
   ],
   "license": "MIT",
@@ -46,7 +46,7 @@
     "babel-register": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "coveralls": "^2.13.2",
-    "gulp": "^3.8.11",
+    "gulp": "^4.0.0",
     "mocha": "^5.0.4",
     "mocha-lcov-reporter": "^1.3.0"
   },
