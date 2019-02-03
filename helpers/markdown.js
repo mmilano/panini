@@ -1,7 +1,7 @@
 /* jshint esversion: 6 */  // allow es6 features
 
-var hljs = require('highlight.js');
-var marked = require('marked');
+const hljs = require('highlight.js');
+const marked = require('marked');
 
 /**
  * Handlebars block helper that converts Markdown to HTML.

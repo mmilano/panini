@@ -1,4 +1,4 @@
-var Handlebars = require('handlebars');
+const Handlebars = require('handlebars');
 
 /**
  * Handlebars block helper that repeats the content inside of it n number of times.
