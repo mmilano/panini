@@ -12,7 +12,7 @@ const marked = require('marked');
  * @returns The Markdown inside the helper, converted to HTML.
  */
  module.exports = function(options) {
-    let markOptions = {
+    let markedOptions = {
         gfm: true
     };
 
@@ -22,11 +22,12 @@ const marked = require('marked');
      if (typeof language === 'undefined') language = 'html';
 
      var renderedCode = hljs.highlight(language, code).value;
-     let output = `<div class="code-example"><pre><code class="${language}">${renderedCode}</code></pre></div>`;
+     // var renderedCode = code;  // DEV TODO: render code without highlight. disable line above.
+     let output = `<div class="code-example"><pre><code class="${language}">${renderedCode}</code></pre></div>\n`;
 
      return output;
    };
 
-   // marked.setOptions(markOptions);
+   marked.setOptions(markedOptions);
    return marked(options.fn(this), { renderer });
  };
