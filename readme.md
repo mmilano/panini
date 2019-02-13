@@ -24,18 +24,19 @@ See the [original panini](https://github.com/zurb/panini) for info about NPM ins
 Feed Panini a stream of HTML files, and get a delicious flattened site out the other end.
 
 ```js
-var gulp = require('gulp');
-var panini = require('panini');
+const gulp = require('gulp');
+const panini = require('panini');
 
 gulp.task('default', function() {
-  gulp.src('pages/**/*.html')
+  return gulp
+    .src('pages/**/*.html')
     .pipe(panini({
       root: 'pages/',
       layouts: 'layouts/',
       partials: 'partials/',
       helpers: 'helpers/',
       data: 'data/',
-      debug: 1
+      debug: 0
     }))
     .pipe(gulp.dest('build'));
 });
@@ -44,7 +45,13 @@ gulp.task('default', function() {
 Note that Panini loads layouts, partials, helpers, and data files once on first run. Whenever these files change, call `panini.refresh()` to get it up to date. You can easily do this inside a call to `gulp.watch()`:
 
 ```js
-gulp.watch(['./src/{layouts,partials,helpers,data}/**/*'], [panini.refresh]);
+// tell panini to refresh all the files
+function refreshPanini(done) {
+    panini.refresh();
+    done();
+}
+
+gulp.watch(['./src/{layouts,partials,helpers,data}/**/*'], refreshPanini);
 ```
 
 ## Options
