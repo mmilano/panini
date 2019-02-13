@@ -1,6 +1,6 @@
 {
   "name": "panini",
-  "version": "1.6.4",
+  "version": "1.6.5",
   "description": "Modified version of panini 1.x, a super tiny flat file compiler.",
   "main": "index.js",
   "scripts": {
