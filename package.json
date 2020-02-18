@@ -1,6 +1,6 @@
 {
   "name": "panini",
-  "version": "1.6.5",
+  "version": "1.6.9",
   "description": "Modified version of panini 1.x, a super tiny flat file compiler.",
   "main": "index.js",
   "scripts": {
@@ -27,15 +27,15 @@
   "dependencies": {
     "deepmerge": "^3.2.0",
     "front-matter": "^2.0.5",
-    "glob": "^7.1.3",
+    "glob": "^7.1.6",
     "handlebars": "^4.1.0",
     "highlight.js": "^9.14.2",
     "js-yaml": "^3.11.0",
-    "marked": "^0.6.0",
+    "marked": "^0.8.0",
     "nopt": "^4.0.1",
     "parse-glob": "^3.0.4",
-    "slash": "^2.0.0",
-    "strip-bom": "^3.0.0",
+    "slash": "^3.0.0",
+    "strip-bom": "^4.0.0",
     "through2": "^3.0.0",
     "vinyl-fs": "^3.0.3"
   },
@@ -47,7 +47,7 @@
     "babel-runtime": "^6.26.0",
     "coveralls": "^3.0.2",
     "gulp": "^4.0.0",
-    "mocha": "^5.0.4",
+    "mocha": "^7.0.1",
     "mocha-lcov-reporter": "^1.3.0"
   },
   "repository": {
