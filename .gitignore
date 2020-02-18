@@ -3,6 +3,10 @@ node_modules
 test/_build
 npm-debug.log
 
+#bbedit project files
+*.bbprojectd
+
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio
 *.iml
 .idea/
+
